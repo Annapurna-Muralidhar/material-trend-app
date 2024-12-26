@@ -1,0 +1,150 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.5.1"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "YY1_MATERIALTEST_CDS_0001": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.message.scope.supported": "true",
+   "@sap.supported.formats": "atom json xlsx"
+  },
+  "YY1_MATERIALTEST_CDS_0001.YY1_MaterialTest": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.semantics": "aggregate",
+   "@sap.label": "MaterialTest",
+   "elements": {
+    "ID": {
+     "key": true,
+     "type": "cds.LargeString",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "MaterialDocumentYear": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "NonNegative",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Material Document Year"
+    },
+    "MaterialDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Material Document",
+     "@sap.quickinfo": "Number of Material Document"
+    },
+    "MaterialDocumentItem": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "NonNegative",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Material Document Item"
+    },
+    "PurchaseOrder": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Purchase Order",
+     "@sap.quickinfo": "Purchase Order Number"
+    },
+    "PurchaseOrderItem": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "NonNegative",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Item",
+     "@sap.quickinfo": "Item Number of Purchasing Document"
+    },
+    "Material": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Plant"
+    },
+    "StorageLocation": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Storage Location"
+    },
+    "EntryUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.aggregation.role": "dimension",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Unit of Entry",
+     "@sap.quickinfo": "Unit of entry",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "PostingDate": {
+     "type": "cds.Date",
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "Date",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Posting Date",
+     "@sap.quickinfo": "Posting Date in the Document"
+    },
+    "GoodsMovementType": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.aggregation.role": "dimension",
+     "@sap.display.format": "UpperCase",
+     "@sap.required.in.filter": "false",
+     "@sap.label": "Movement Type",
+     "@sap.quickinfo": "Movement Type (Inventory Management)"
+    },
+    "QuantityInEntryUnit": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.aggregation.role": "measure",
+     "@sap.required.in.filter": "false",
+     "@sap.unit": "EntryUnit",
+     "@sap.label": "Qty in unit of entry",
+     "@sap.quickinfo": "Quantity in unit of entry",
+     "@sap.filterable": "false"
+    },
+    "QuantityInBaseUnit": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.aggregation.role": "measure",
+     "@sap.required.in.filter": "false",
+     "@sap.unit": "EntryUnit",
+     "@sap.label": "Quantity",
+     "@sap.filterable": "false"
+    }
+   }
+  }
+ }
+}

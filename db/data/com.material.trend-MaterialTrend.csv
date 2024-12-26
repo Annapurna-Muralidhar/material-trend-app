@@ -1,0 +1,13 @@
+ID,Material,Date,Quantity
+1,MaterialA,2024-01-01,100
+2,MaterialA,2024-01-02,150
+3,MaterialA,2024-01-03,200
+4,MaterialA,2024-02-01,180
+5,MaterialA,2024-02-02,130
+6,MaterialA,2024-02-03,220
+7,MaterialA,2024-01-01,320
+8,MaterialA,2024-01-02,540
+9,MaterialA,2024-01-03,60
+10,MaterialA,2024-03-03,120
+11,MaterialA,2024-04-03,720
+12,MaterialA,2024-05-03,60
