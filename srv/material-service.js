@@ -11,6 +11,8 @@ module.exports = cds.service.impl(async function () {
         const { Material } = this.entities;
         console.log("Action 'chart' invoked!");
         const requestData = req.data;
+        console.log("requested data : ",requestData);
+        
 
         if (!requestData || !requestData.data || requestData.data.length === 0) {
             console.error("No data received!");
@@ -33,8 +35,10 @@ module.exports = cds.service.impl(async function () {
                 const movementType = item.GoodsMovementType;
                 if (['201', '221', '251', '261', '281', '291'].includes(movementType)) {
                     cumulativeQuantity -= quantity;
-                } else {
+                } else if (['101', '103', '105', '121', '122', '124','161', '301', '305', '311', '313'].includes(movementType)) {
                     cumulativeQuantity += quantity;
+                } else{
+                    cumulativeQuantity=cumulativeQuantity
                 }
 
                 cumulativeData.push({ date, quantity: cumulativeQuantity });
